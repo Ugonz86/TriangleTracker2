@@ -1,6 +1,6 @@
 using System;
 
-class TriangleTracker
+public class TriangleTracker
 {
   static void Main()
   {
@@ -12,10 +12,11 @@ class TriangleTracker
     int Side3 = int.Parse(Console.ReadLine());
     Triangle currentTriangle = new Triangle (Side1, Side2, Side3);
     Console.WriteLine(currentTriangle.TriangleType());
+    Console.ResetColor();
   }
 }
 
-class Triangle
+public class Triangle
 {
   public int Side1;
   public int Side2;
@@ -32,26 +33,22 @@ class Triangle
   {
     if (Side1 > (Side2 + Side3) || Side2 > (Side1 + Side3) || Side3 > (Side2 + Side1))
     {
-      Console.ForegroundColor = ConsoleColor.White;
-      Console.BackgroundColor = ConsoleColor.Red;
+      Console.ForegroundColor = ConsoleColor.Red;
       return ("It's not a Triangle!");
     }
     else if (Side1 == Side2 && Side2 == Side3)
     {
-      Console.ForegroundColor = ConsoleColor.White;
-      Console.BackgroundColor = ConsoleColor.Green;
+      Console.ForegroundColor = ConsoleColor.Green;
       return ("It's an Equilateral Triangle!");
     }
     else if (Side1 == Side2 || Side2 == Side3 || Side1 == Side3)
     {
-      Console.ForegroundColor = ConsoleColor.White;
-      Console.BackgroundColor = ConsoleColor.Blue;
+      Console.ForegroundColor = ConsoleColor.Blue;
       return ("It's an Isosceles Triangle!");
     }
     else 
     {
-      Console.ForegroundColor = ConsoleColor.Black;
-      Console.BackgroundColor = ConsoleColor.Yellow;
+      Console.ForegroundColor = ConsoleColor.DarkCyan;
       return ("It's a Scalene Triangle!");
     }
   }
